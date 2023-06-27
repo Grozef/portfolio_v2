@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width"> <!-- Taille du viewport à utiliser. Je vous conseiller de copier cette ligne sur tous vos projets -->
+		<link rel="stylesheet" href="sun.css">
+		<title>Conditions & dates</title> <!-- Titre de la page -->
+
+	</head>
+
+	<body>
+		<header>
+		  	<div id="logo">
+		    	<img  src="night.jpg" alt="logo" id="monImage"/>
+		  	</div>
+		</header>
+
+		<div class="container">
+
+		  <h1 id='title'>Bienvenue sur mon site !</h1>
+
+		</div>
+	</body>
+	<script>
+			let date1 = new Date();
+			let heure = date1.getHours()
+			let ima = document.getElementById("monImage")
+			
+			    	if ( heure>=6 && heure<10 ){
+						ima.src = ("sunrise.jpg")
+					}
+					if (heure>=10 && heure<18){
+						ima.src = ("zenith.jpg")
+					}
+					if (heure>=18 && heure<22){
+						ima.src = ("sunset.jpg")
+					}
+					if (heure>=22 || heure<6){
+						ima.src = ("night.jpg")
+					}
+
+		//le dernier if n'est pas necessaire si l'image par defaut est nuit
+		// attention a mettre ou a la place de et en conditions pour simuler le 
+		//cadran qui se réinitialise
+	</script>
+</html>
