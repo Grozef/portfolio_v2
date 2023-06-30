@@ -69,7 +69,7 @@
             </div>
             <button type="button" class="btn btn-primary">Deviner</button>
           </div>
-          <small class="text-danger">Vous devez rentrer un nombre.</small>
+          <small class="text-danger">Vous devez rentrer un nombre entre 0 et 100. Une indication va apparaître en dessous dès que vous aurez cliqué sur le bouton deviner. </small>
         </form>
         
       </div>  
@@ -90,10 +90,11 @@
   const price = document.querySelector("input.form-control"); 
   const val = Math.floor(Math.random() * 101);
 
+//evenement sur le click sur le bouton, declenchement de la fonction guess
   bouton.addEventListener("click",guess)
 
 console.log(val)
-
+//fonction guess pour essayer de deviner le nombre généré aléatoirement
       function guess(value, message){
         
             if(price.value>val){
@@ -125,26 +126,7 @@ console.log(val)
             
             }
 
-      }
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
+      };
 </script>
-
-
-//  document.createElement(div)
-
-
 
 </html>

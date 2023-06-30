@@ -10,6 +10,7 @@ const optionKayak     = document.querySelector("#ok-kayak");
 const optionDraps     = document.querySelector("#ok-draps");
 const tiDej           = document.querySelector("#ouiPetitDej");
 const noTiDej         = document.querySelector("#nonPetitDej");
+const recap           = document.querySelector(".récap");
 let douloureuse = 0
 
 /* Event Listener sur le type d'hebergement => changer l'image en fonction */
@@ -89,11 +90,17 @@ function somme(){
 
     douloureuse = (toit + loc + drap + tiDej);
     prixTotal.textContent = douloureuse + " "+ "€";
-           
-}
+        
+};
+console.log (douloureuse);
 
-/*boutonOk.addEventListener("click",somme); => si on ne veut la somme qu'au click "Ok"*/
+const prixRecap = document.querySelector(".recap");
 
+function afficherSomme(){
+
+    prixRecap.textContent = "Votre séjour de rêve vous coutera " + douloureuse + " €";
+
+};
 
 /* addEventListener pour changer la somme en temps réel / "change" sur les boutons*/ 
 
@@ -102,6 +109,6 @@ optionKayak.addEventListener("change",somme);
 optionDraps.addEventListener("change",somme);
 tiDej.addEventListener("change",somme);
 noTiDej.addEventListener("change",somme);
-
+boutonOk.addEventListener("click",afficherSomme); 
 
 

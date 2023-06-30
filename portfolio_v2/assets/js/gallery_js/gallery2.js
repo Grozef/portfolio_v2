@@ -76,9 +76,6 @@ let imagesTable = [
         "/../portfolio_v2/assets/js/gallery_js/Sequence5.jpg",
         "/../portfolio_v2/assets/js/gallery_js/Sequence6.jpg",
         "/../portfolio_v2/assets/js/gallery_js/Sequence7.jpg",
-        "/../portfolio_v2/assets/js/gallery_js/Sequence8.jpg",
-        "/../portfolio_v2/assets/js/gallery_js/Sequence9.jpg",
-        "/../portfolio_v2/assets/js/gallery_js/Sequence10.jpg"
 ]
 let numerophoto = 0;
 let monImage    = document.getElementById("monImage");

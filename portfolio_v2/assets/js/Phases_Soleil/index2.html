@@ -17,11 +17,22 @@
 
 		<div class="container">
 
-		  <h1 id='title'>Bienvenue sur mon site !</h1>
+		  <h1 id='title'>Bienvenue sur un des exercices du portfolio de François !</h1>
+
+
+		  <div>
+		  <input  id="fakeH" class="param" type="text"> Entrez une heure </input>
+		  <button onclick="fakeHour()" >affichez une image selon l'heure saisie </button>
+		</div>
+		  <div id="logoParametrable">
+			<img   class="parametrable" src="night.jpg" alt="logo" id="monImage"/>
+		  </div>
 
 		</div>
 	</body>
 	<script>
+
+		function realHour(){
 			let date1 = new Date();
 			let heure = date1.getHours()
 			let ima = document.getElementById("monImage")
@@ -40,7 +51,33 @@
 					}
 
 		//le dernier if n'est pas necessaire si l'image par defaut est nuit
-		// attention a mettre ou a la place de et en conditions pour simuler le 
-		//cadran qui se réinitialise
+		// attention à mettre "ou / ||" à la place de "et / &&" en conditions pour simuler le 
+		//cadran horaire qui se réinitialise
+	}
+
+		function fakeHour(){
+			let date1 = new Date();
+			let heure = document.getElementById("fakeH").value;
+			let ima = document.querySelector(".parametrable");
+			
+			    	if ( heure>=6 && heure<10 ){
+						ima.src = ("sunrise.jpg")
+					}
+					if (heure>=10 && heure<18){
+						ima.src = ("zenith.jpg")
+					}
+					if (heure>=18 && heure<22){
+						ima.src = ("sunset.jpg")
+					}
+					if (heure>=22 || heure<6){
+						ima.src = ("night.jpg")
+					}
+		}
+  
+// Appeler la fonction realHour des le chargement de la page
+document.addEventListener("DOMContentLoaded", realHour);	
+// Mettre à jour l'image toutes les 1 minute (60 000 = 60 000 millisecondes) 
+  setInterval(realHour, 60000);
+
 	</script>
 </html>
